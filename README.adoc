@@ -1,0 +1,38 @@
+# To run the project first start up the Kafka cluster
+
+Assuming you are in the Kafka home folder, you can use the following set of commands to start a local kafka cluster
+
+## Start Zookeeper
+[source, java]
+----
+bin/zookeeper-server-start.sh config/zookeeper.properties
+----
+
+## Start Kafka broker:
+[source, java]
+----
+bin/kafka-server-start.sh config/server.properties
+----
+
+# Start up the Producer, from the root of the project
+
+[source, java]
+----
+cd sample-spring-kafka-producer
+../gradlew bootRun
+----
+
+# Start up the Consumer
+
+[source, java]
+----
+cd sample-spring-kafka-consumer
+../gradlew bootRun
+----
+
+
+## At this point some sample messages can be generated using this endpoint:
+
+http://localhost:8080/generateWork?id=1&definition=test
+
+The producer should print a message on the console that the Work unit has been dispatched and the consumer should receive and process the Work unit
