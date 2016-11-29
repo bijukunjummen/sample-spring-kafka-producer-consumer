@@ -29,6 +29,7 @@ subprojects {
         compile('org.springframework.boot:spring-boot-starter-web')
         compile 'com.google.guava:guava:20.0'
         testCompile('org.springframework.boot:spring-boot-starter-test')
+        testCompile "org.springframework.kafka:spring-kafka-test:1.1.2.BUILD-SNAPSHOT"
     }
 
 }
