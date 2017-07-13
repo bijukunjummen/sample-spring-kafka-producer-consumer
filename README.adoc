@@ -1,18 +1,21 @@
-# To run the project first start up the Kafka cluster
+## Getting Started
+These instructions will show how to run kafka locally and how to install kafkacat, a tool to display messages in a kafka topic
 
-Assuming you are in the Kafka home folder, you can use the following set of commands to start a local kafka cluster
+### Run kafka locally
+In a terminal cd to the root of this project and run
+```
+docker-compose up -d
+```
+Check both kafka and zookeeper are running
+```
+docker ps
+```
+### Install kafkacat
+Install kafkacat utility using the local package manager.
 
-## Start Zookeeper
-[source, java]
-----
-bin/zookeeper-server-start.sh config/zookeeper.properties
-----
-
-## Start Kafka broker:
-[source, java]
-----
-bin/kafka-server-start.sh config/server.properties
-----
+```
+sudo apt-get install kafkacat
+```
 
 # Start up the Producer, from the root of the project
 
@@ -33,6 +36,6 @@ cd sample-spring-kafka-consumer
 
 ## At this point some sample messages can be generated using this endpoint:
 
-http://localhost:8080/generateWork?id=1&definition=test
+http://localhost:8080/generateWork?id=1&definition=thisIsCool
 
 The producer should print a message on the console that the Work unit has been dispatched and the consumer should receive and process the Work unit
