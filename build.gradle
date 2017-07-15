@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.2.RELEASE'
+        springBootVersion = '1.5.4.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -24,12 +24,12 @@ subprojects {
     }
 
     dependencies {
-        compile "org.apache.kafka:kafka-clients:0.10.1.0"
-        compile "org.springframework.kafka:spring-kafka:1.1.2.BUILD-SNAPSHOT"
+        compile "org.apache.kafka:kafka-clients:0.10.2.0"
+        compile "org.springframework.kafka:spring-kafka:1.2.2.RELEASE"
         compile('org.springframework.boot:spring-boot-starter-web')
         compile 'com.google.guava:guava:20.0'
         testCompile('org.springframework.boot:spring-boot-starter-test')
-        testCompile "org.springframework.kafka:spring-kafka-test:1.1.2.BUILD-SNAPSHOT"
+        testCompile "org.springframework.kafka:spring-kafka-test:1.2.2.RELEASE"
     }
 
 }
